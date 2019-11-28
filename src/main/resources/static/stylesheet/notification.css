@@ -1,0 +1,14 @@
+#notification_col {
+    background: #F7F7F7
+}
+.nav-sm #notification_col {
+    margin-left: 70px;
+}
+@media (min-width: 992px) {
+    #notification_col {
+        margin-left: 230px;
+    }
+}
+#notification_row {
+    margin-bottom: 0px;
+}
