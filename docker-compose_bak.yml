@@ -1,0 +1,36 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7.21
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --sql_mode="NO_ENGINE_SUBSTITUTION" --explicit_defaults_for_timestamp="ON"
+    container_name: mysqlapi
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 880819a
+      MYSQL_USER: qzwyuhua
+      MYSQL_PASSWORD: 880819a
+      MYSQL_DATABASE: tokyohot
+    networks:
+      - net-spring-db
+
+
+  app:
+    restart: always
+    build: ./
+    volumes:
+      - /:/app
+    expose:
+      - "8080"
+    depends_on:
+      - mysql
+    links:
+      - "101.132.99.245:mysql"
+    networks:
+      - net-spring-db
+    ports:
+      - "8080:8080"
+
+networks:
+  net-spring-db:
+    driver: bridge
