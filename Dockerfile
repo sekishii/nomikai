@@ -1,6 +1,6 @@
 FROM java:8
 
-VOLUME /tmp
+VOLUME /target
 
 ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
