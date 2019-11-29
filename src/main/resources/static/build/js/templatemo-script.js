@@ -48,10 +48,8 @@ $(document).ready(function () {
 
     video.onloadeddata = function() {
         $('#tm-video-text-overlay').removeClass('d-none');
-        $('#tm-video-loader').addClass('d-none');
-
-        alert("test");
-
+////        $('#tm-video-loader').addClass('d-none');
+////
         $('#rotate').rotaterator({
             fadeSpeed: 1000,
             pauseSpeed: 300
