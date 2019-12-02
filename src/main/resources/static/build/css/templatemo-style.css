@@ -150,7 +150,7 @@ a.tm-text-white:focus {
 
 hr {
     border-color: #666666;
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .tm-video-iframe {
@@ -191,7 +191,7 @@ hr {
     vertical-align: middle;
     border-radius: 20px;
     padding: 35px 40px;
-    max-width: 712px;
+    width: 700px;
 }
 
 .tm-section-mb {

@@ -29,6 +29,11 @@ CREATE TABLE m_user
     age bigint(3) COMMENT '年龄',
     -- 删除FLG
     delete_flg char(1) DEFAULT '0' COMMENT '删除FLG',
+    -- 发起时间
+    created_at timestamp(3) DEFAULT CURRENT_TIMESTAMP(3) COMMENT '发起时间',
+    -- 更新时间
+    updated_at timestamp(3) DEFAULT CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+
     PRIMARY KEY (user_id),
 	UNIQUE (id)
 
@@ -41,20 +46,29 @@ CREATE TABLE reservation
     -- id
     id bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
     -- 聚会ID
-    revervation_id varchar(32) NOT NULL COMMENT '聚会ID',
+    reservation_id varchar(32) NOT NULL COMMENT '聚会ID',
     -- 聚会名称
-    revervation_name varchar(32) NOT NULL COMMENT '聚会名称',
+    reservation_name varchar(32) NOT NULL COMMENT '聚会名称',
     -- 聚会地点
-    position varchar(128) NOT NULL COMMENT '聚会名称',
+    position varchar(128) NOT NULL COMMENT '聚会地点',
+    -- 聚会内容
+    content text COMMENT '聚会内容',
+    -- 图片URL
+    img_url text COMMENT '图片URL',
     -- 发起人ID
     organizer_id varchar(32) NOT NULL COMMENT '发起人ID',
     -- 聚会时间
     begin_time timestamp(3) NOT NULL COMMENT '聚会时间',
-    -- 发起时间
-	created_at timestamp(3) DEFAULT CURRENT_TIMESTAMP(3) COMMENT '作成日時',
+    -- 预计时间
+    estimate_time bigint(2) COMMENT '预计时间',
     -- 删除FLG
     delete_flg char(1) DEFAULT '0' COMMENT '删除FLG',
-    PRIMARY KEY (revervation_id),
+    -- 发起时间
+	created_at timestamp(3) DEFAULT CURRENT_TIMESTAMP(3) COMMENT '发起时间',
+    -- 更新时间
+    updated_at timestamp(3) DEFAULT CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+
+    PRIMARY KEY (reservation_id),
     UNIQUE (id)
 
 ) COMMENT = '聚会活动信息' DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
